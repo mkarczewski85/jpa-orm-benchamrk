@@ -1,0 +1,13 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: database","Param: totalRows"
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectAllEmployees","avgt",1,25,"3,736566","0,212732","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectAllEmployees","avgt",1,25,"31,538775","1,063996","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectAllEmployees","avgt",1,25,"148,263994","4,385912","ms/op",MARIA_DB,50000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"0,573385","0,055387","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"0,916965","0,006889","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"2,711642","0,016717","ms/op",MARIA_DB,50000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"0,419926","0,003717","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"0,857179","0,008758","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"2,570529","0,019011","ms/op",MARIA_DB,50000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"4,720050","0,079767","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"42,891618","0,154689","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.hibernate.HibernateBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"215,985597","0,846637","ms/op",MARIA_DB,50000

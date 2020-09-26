@@ -1,0 +1,113 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <!--  Hibernate (MariaDB)  -->
+
+<!--        <persistence-unit name="hibernate-persistence-unit" transaction-type="RESOURCE_LOCAL">-->
+<!--            <description>HibernateBenchmark</description>-->
+<!--            <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+<!--            <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+<!--            <properties>-->
+<!--                <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>-->
+<!--                <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/staff"/>-->
+<!--                <property name="javax.persistence.jdbc.user" value="root"/>-->
+<!--                <property name="javax.persistence.jdbc.password" value="matkal13"/>-->
+<!--                <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>-->
+<!--                <property name="hibernate.show_sql" value="false"/>-->
+<!--            </properties>-->
+<!--        </persistence-unit>-->
+
+    <!--  Hibernate (PostgreSQL)  -->
+
+<!--        <persistence-unit name="hibernate-persistence-unit" transaction-type="RESOURCE_LOCAL">-->
+<!--            <description>HibernateBenchmark</description>-->
+<!--            <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+<!--            <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+<!--            <properties>-->
+<!--                <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>-->
+<!--                <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/staff"/>-->
+<!--                <property name="javax.persistence.jdbc.user" value="postgres"/>-->
+<!--                <property name="javax.persistence.jdbc.password" value="matkal13"/>-->
+<!--                <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>-->
+<!--                <property name="hibernate.show_sql" value="false"/>-->
+<!--            </properties>-->
+<!--        </persistence-unit>-->
+
+    <!--  EclipseLink (MariaDB)  -->
+
+<!--        <persistence-unit name="eclipse-persistence-unit" transaction-type="RESOURCE_LOCAL">-->
+<!--            <description>EclipseLinkBenchmark</description>-->
+<!--            <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+<!--            <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+<!--            <properties>-->
+<!--                <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>-->
+<!--                <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/staff"/>-->
+<!--                <property name="javax.persistence.jdbc.user" value="root"/>-->
+<!--                <property name="javax.persistence.jdbc.password" value="matkal13"/>-->
+<!--                &lt;!&ndash;            <property name="eclipselink.logging.level" value="FINE"/>&ndash;&gt;-->
+<!--            </properties>-->
+<!--        </persistence-unit>-->
+
+    <!--  EclipseLink (PostgreSQL)  -->
+
+<!--    <persistence-unit name="eclipse-persistence-unit" transaction-type="RESOURCE_LOCAL">-->
+<!--        <description>EclipseLinkBenchmark</description>-->
+<!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+<!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+<!--        <properties>-->
+<!--            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>-->
+<!--            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/staff"/>-->
+<!--            <property name="javax.persistence.jdbc.user" value="postgres"/>-->
+<!--            <property name="javax.persistence.jdbc.password" value="matkal13"/>-->
+<!--            &lt;!&ndash;            <property name="eclipselink.logging.level" value="FINE"/>&ndash;&gt;-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
+
+    <!--  OpenJPA (PostgreSQL)  -->
+
+    <persistence-unit name="openjpa-persistence-unit" transaction-type="RESOURCE_LOCAL">
+        <description>OpenJpaBenchmark</description>
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <class>com.benchmark.jpa.entity.Project</class>
+        <class>com.benchmark.jpa.entity.Team</class>
+        <class>com.benchmark.jpa.entity.Address</class>
+        <class>com.benchmark.jpa.entity.EmploymentDetails</class>
+        <class>com.benchmark.jpa.entity.Employee</class>
+        <properties>
+            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/staff"/>
+            <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>
+            <property name="openjpa.ConnectionUserName" value="postgres"/>
+            <property name="openjpa.ConnectionPassword" value="matkal13"/>
+            <property name="openjpa.DynamicEnhancementAgent" value="true"/>
+            <property name="openjpa.jdbc.DBDictionary" value="org.apache.openjpa.jdbc.sql.PostgresDictionary"/>
+            <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
+            <property name="openjpa.ConnectionFactoryProperties" value="MaxActive=10,MaxIdle=5,MinIdle=2,MaxWait=1800000"/>
+<!--            <property name="openjpa.Log" value="SQL=TRACE"/>-->
+        </properties>
+    </persistence-unit>
+
+    <!--  OpenJPA (MariaDB)  -->
+
+<!--    <persistence-unit name="openjpa-persistence-unit" transaction-type="RESOURCE_LOCAL">-->
+<!--        <description>OpenJpaBenchmark</description>-->
+<!--        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>-->
+<!--        <class>com.benchmark.jpa.entity.Project</class>-->
+<!--        <class>com.benchmark.jpa.entity.Team</class>-->
+<!--        <class>com.benchmark.jpa.entity.Address</class>-->
+<!--        <class>com.benchmark.jpa.entity.EmploymentDetails</class>-->
+<!--        <class>com.benchmark.jpa.entity.Employee</class>-->
+<!--        <properties>-->
+<!--            <property name="openjpa.ConnectionURL" value="jdbc:mariadb://localhost:3306/staff"/>-->
+<!--            <property name="openjpa.ConnectionDriverName" value="org.mariadb.jdbc.Driver"/>-->
+<!--            <property name="openjpa.ConnectionUserName" value="root"/>-->
+<!--            <property name="openjpa.ConnectionPassword" value="matkal13"/>-->
+<!--            <property name="openjpa.DynamicEnhancementAgent" value="true"/>-->
+<!--            <property name="openjpa.jdbc.DBDictionary" value="org.apache.openjpa.jdbc.sql.MariaDBDictionary"/>-->
+<!--            <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>-->
+<!--            <property name="openjpa.ConnectionFactoryProperties" value="MaxActive=10,MaxIdle=5,MinIdle=2,MaxWait=1800000"/>-->
+<!--            &lt;!&ndash;            <property name="openjpa.Log" value="SQL=TRACE"/>&ndash;&gt;-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
+
+</persistence>

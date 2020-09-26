@@ -1,0 +1,13 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: database","Param: totalRows"
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectAllEmployees","avgt",1,25,"2,807903","0,088101","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectAllEmployees","avgt",1,25,"26,091278","1,506029","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectAllEmployees","avgt",1,25,"102,243718","13,295436","ms/op",POSTGRE_SQL,50000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"0,424366","0,146135","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"1,742653","0,038795","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"7,016532","0,142308","ms/op",POSTGRE_SQL,50000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"0,406319","0,100504","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"1,924615","0,028020","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"9,460631","0,214384","ms/op",POSTGRE_SQL,50000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"3,174200","0,057180","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"29,705313","0,625910","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.eclipselink.EclipseLinkBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"179,108458","1,933818","ms/op",POSTGRE_SQL,50000

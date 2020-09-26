@@ -1,0 +1,13 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: database","Param: totalRows"
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectAllEmployees","avgt",1,25,"4,934427","0,380298","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectAllEmployees","avgt",1,25,"45,273528","0,362758","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectAllEmployees","avgt",1,25,"294,957005","1,977363","ms/op",POSTGRE_SQL,50000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"1,057160","0,431454","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"4,457414","0,121978","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"16,477500","0,467630","ms/op",POSTGRE_SQL,50000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"0,938722","0,215174","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"4,711142","0,164919","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"18,863439","0,558687","ms/op",POSTGRE_SQL,50000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"34,719379","41,084170","ms/op",POSTGRE_SQL,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"45,901497","0,411581","ms/op",POSTGRE_SQL,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"298,100985","5,952771","ms/op",POSTGRE_SQL,50000

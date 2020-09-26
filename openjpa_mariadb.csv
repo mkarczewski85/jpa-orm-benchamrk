@@ -1,0 +1,13 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: database","Param: totalRows"
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectAllEmployees","avgt",1,25,"10,557229","0,361770","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectAllEmployees","avgt",1,25,"95,619636","0,480353","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectAllEmployees","avgt",1,25,"483,466952","3,438400","ms/op",MARIA_DB,50000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"0,873422","0,007814","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"1,374435","0,010391","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByProjectName","avgt",1,25,"3,304982","0,048404","ms/op",MARIA_DB,50000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"2,354435","0,043262","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"15,493846","0,166138","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesByTeamName","avgt",1,25,"72,468192","0,626038","ms/op",MARIA_DB,50000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"10,445219","0,142722","ms/op",MARIA_DB,1000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"95,527587","0,342543","ms/op",MARIA_DB,10000
+"com.benchmark.jpa.benchmarks.openjpa.OpenJpaBenchmark.measureSelectEmployeesWithAddress","avgt",1,25,"487,493790","23,213666","ms/op",MARIA_DB,50000
