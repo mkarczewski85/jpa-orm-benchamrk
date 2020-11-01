@@ -30,6 +30,9 @@ public class EclipseLinkBenchmark {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectAllEmployees(Environment env, Blackhole blackhole) {
         CriteriaQuery<Employee> query = criteriaBuilder.createQuery(Employee.class);
         Root<Employee> root = query.from(Employee.class);
@@ -43,6 +46,9 @@ public class EclipseLinkBenchmark {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectEmployeesWithAddress(Environment env, Blackhole blackhole) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
@@ -57,6 +63,9 @@ public class EclipseLinkBenchmark {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectEmployeesByProjectName(Environment env, Blackhole blackhole) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
@@ -74,6 +83,9 @@ public class EclipseLinkBenchmark {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectEmployeesByTeamName(Environment env, Blackhole blackhole) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);

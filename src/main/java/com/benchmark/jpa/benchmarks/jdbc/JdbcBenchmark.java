@@ -31,9 +31,16 @@ public class JdbcBenchmark {
             "SELECT e.id, e.firstname, e.lastname, e.emp_salary, e.emp_position, e.emp_date, e.id_team, e.id_address " +
                     "FROM employee e INNER JOIN team t ON t.id = e.id_team WHERE t.team_name LIKE ?";
 
+    private static final String SELECT_ALL_EMPLOYEES_BY_TEAM_NAME_OPT =
+            "SELECT e.id, e.firstname, e.lastname, e.emp_salary, e.emp_position, e.emp_date, e.id_team, e.id_address " +
+                    "FROM employee e WHERE t.id_team = (SELECT id FROM team WHERE name LIKE ?)";
+
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectAllEmployees(Environment env, Blackhole blackhole) throws SQLException {
         try (Connection connection = env.getConnection()) {
             try (PreparedStatement ps = connection.prepareStatement(SELECT_ALL_EMPLOYEE_QUERY)) {
@@ -47,6 +54,9 @@ public class JdbcBenchmark {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectAllEmployeesWithAddress(Environment env, Blackhole blackhole) throws SQLException {
         try (Connection connection = env.getConnection()) {
             try (PreparedStatement ps = connection.prepareStatement(SELECT_ALL_EMPLOYEE_WITH_ADDRESS_QUERY)) {
@@ -60,6 +70,9 @@ public class JdbcBenchmark {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectAllEmployeesByProjectName(Environment env, Blackhole blackhole) throws SQLException {
         try (Connection connection = env.getConnection()) {
             try (PreparedStatement ps = connection.prepareStatement(SELECT_ALL_EMPLOYEES_BY_PROJECT_NAME)) {
@@ -73,9 +86,28 @@ public class JdbcBenchmark {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
     public void measureSelectAllEmployeesByTeamName(Environment env, Blackhole blackhole) throws SQLException {
         try (Connection connection = env.getConnection()) {
             try (PreparedStatement ps = connection.prepareStatement(SELECT_ALL_EMPLOYEES_BY_TEAM_NAME)) {
+                ps.setString(1, "%" + env.getTotalRows());
+                ResultSet rs = ps.executeQuery();
+                blackhole.consume(rs);
+            }
+        }
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    @BenchmarkMode(Mode.AverageTime)
+    @Fork(value = 1, warmups = 4)
+    @Warmup(iterations = 3, time = 1)
+    @Measurement(iterations = 5, time = 1)
+    public void measureSelectAllEmployeesByTeamNameOptimized(Environment env, Blackhole blackhole) throws SQLException {
+        try (Connection connection = env.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement(SELECT_ALL_EMPLOYEES_BY_TEAM_NAME_OPT)) {
                 ps.setString(1, "%" + env.getTotalRows());
                 ResultSet rs = ps.executeQuery();
                 blackhole.consume(rs);

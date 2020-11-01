@@ -34,6 +34,7 @@ class SqlBootstrap {
             st.execute(composeDeleteQuery(DB_ADDRESS_TABLE));
             st.execute(composeDeleteQuery(DB_PROJECT_TABLE));
             st.execute(composeDeleteQuery(DB_TEAM_TABLE));
+            LOGGER.info("Database cleared!");
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot clear tables", e);
         }

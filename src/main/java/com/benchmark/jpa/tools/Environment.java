@@ -9,8 +9,8 @@ import java.sql.SQLException;
 @State(Scope.Benchmark)
 public class Environment {
 
-    @Param(value = "POSTGRE_SQL")
-//    @Param(value = "MARIA_DB")
+//    @Param(value = "POSTGRE_SQL")
+    @Param(value = "MARIA_DB")
     private Database database;
     @Param(value = {"1000", "10000", "50000"})
     private int totalRows;
